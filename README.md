@@ -249,6 +249,7 @@ docs/
 screenshots/
 troubleshooting/
 workflows/
+```
 
 ---
 
@@ -257,14 +258,15 @@ workflows/
 Synapse Optical is currently in active development and proof-of-concept refinement.
 
 Current focus areas include:
- - Fortinet operational workflows
- - VPN troubleshooting engines
- - Vendor abstraction concepts
- - Workflow validation logic
- - Operational safety controls
- - AI-assisted troubleshooting methodologies
- - Palo Alto Networks integration
- - Structured workflow orchestration
+
+- Fortinet operational workflows
+- VPN troubleshooting engines
+- Vendor abstraction concepts
+- Workflow validation logic
+- Operational safety controls
+- AI-assisted troubleshooting methodologies
+- Palo Alto Networks integration
+- Structured workflow orchestration
 
 ---
 
@@ -280,4 +282,5 @@ No customer environments, credentials, proprietary client data, or production-se
 
 Daniel Azgour  
 Senior Network Security Engineer  
+
 Fortinet | Palo Alto Networks | Hybrid Cloud Networking | Network Automation | Operational Security Engineering
