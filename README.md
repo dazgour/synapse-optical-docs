@@ -78,10 +78,17 @@ High-level architectural concepts include:
 
 Additional documentation:
 
-- `/architecture`
-- `/docs/safety-model.md`
-- `/docs/vendor-abstraction.md`
-- `/docs/roadmap.md`
+synapse-optical-docs/
+├── architecture/
+│   ├── high-level-architecture.md
+│   ├── operational-workflow.md
+│   ├── vendor-abstraction.md
+│   ├── safety-model.md
+│
+├── troubleshooting/
+├── workflows/
+├── diagrams/
+├── screenshots/
 
 ---
 
