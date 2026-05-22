@@ -32,7 +32,6 @@ This roadmap reflects architectural direction and development focus areas rather
 Current primary focus:
 
 - Fortinet FortiGate
-- FortiManager
 - FortiAnalyzer
 
 Active development:
