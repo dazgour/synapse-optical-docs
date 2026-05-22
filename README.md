@@ -76,20 +76,6 @@ High-level architectural concepts include:
 - Human approval workflow concepts
 - Audit-first operational design
 
-Additional documentation:
-
-synapse-optical-docs/
-├── architecture/
-│   ├── high-level-architecture.md
-│   ├── operational-workflow.md
-│   ├── vendor-abstraction.md
-│   ├── safety-model.md
-│
-├── troubleshooting/
-├── workflows/
-├── diagrams/
-├── screenshots/
-
 ---
 
 # Architecture Philosophy
@@ -246,16 +232,22 @@ This public repository contains:
 Core proprietary source code, orchestration logic, internal AI workflows, backend systems, execution pipelines, and implementation-specific intellectual property are intentionally excluded from this repository.
 
 ---
-
 # Current Repository Structure
 
 ```text
-architecture/
-diagrams/
-docs/
-screenshots/
-troubleshooting/
-workflows/
+README.md
+
+synapse-optical-docs/
+├── architecture/
+│   ├── high-level-architecture.md
+│   ├── operational-workflow.md
+│   ├── vendor-abstraction.md
+│   ├── safety-model.md
+│
+├── troubleshooting/
+├── workflows/
+├── diagrams/
+├── screenshots/
 ```
 
 ---
