@@ -3,46 +3,84 @@
 This diagram represents the current proof-of-concept direction for Synapse Optical. It shows the intended platform structure for AI-assisted network automation, deterministic troubleshooting, vendor-aware validation, and controlled operational workflows.
 
 ```mermaid
-flowchart TD
+flowchart TB
+    User["Network Engineer / Operator"]
 
-    U[Network / Security Engineer] --> UI[Web Interface]
-
-    UI --> API[Application Backend / API Layer]
-
-    API --> WF[Workflow Engine]
-
-    WF --> DIAG[Deterministic Diagnostic Engine]
-    WF --> VAL[Vendor-Aware Validation Engine]
-    WF --> CHANGE[Change Preview & Approval Workflow]
-
-    AI[AI Assistance Layer] --> WF
-    AI --> DIAG
-    AI --> VAL
-
-    DIAG --> VA[Vendor Abstraction Layer]
-    VAL --> VA
-    CHANGE --> VA
-
-    VA --> FGT[Fortinet FortiGate]
-    VA --> PAN[Palo Alto Networks PAN-OS]
-
-    FGT --> SSH1[SSH / CLI]
-    FGT --> REST1[REST API]
-
-    PAN --> SSH2[SSH / CLI]
-    PAN --> API2[XML API / REST API]
-
-    subgraph Safety["Operational Safety Controls"]
-        RO[Read-Only Diagnostics]
-        PRE[Change Preview]
-        APPROVAL[Human Approval]
-        AUDIT[Audit / Logging]
+    subgraph Client["Thin Web Client"]
+        UI["React / TypeScript UI"]
+        Dashboard["Dashboard"]
+        Devices["Devices"]
+        Workflows["Guided Workflows"]
+        Changes["Change Requests"]
+        Troubleshoot["Troubleshooting"]
+        Audit["Audit Log"]
     end
 
-    WF --> Safety
-    CHANGE --> PRE
-    PRE --> APPROVAL
-    APPROVAL --> VA
+    subgraph Backend["Controlled Backend API Layer"]
+        API["FastAPI REST API"]
+        Auth["Auth / RBAC / Session Controls"]
+        Workflow["Workflow Engine"]
+        ChangePlan["Change Plan Builder"]
+        Validation["Deterministic Validation Engine"]
+        Risk["Risk & Safety Scoring"]
+        AI["AI Assistance Layer"]
+        AuditSvc["Audit Service"]
+    end
+
+    subgraph VendorCore["Vendor Abstraction Layer"]
+        Registry["Vendor Plugin Registry"]
+        Normalized["Normalized Config Model"]
+        Templates["Backend-Owned Templates"]
+        Rollback["Rollback / Verification Logic"]
+    end
+
+    subgraph Vendors["Current PoC Vendor Integrations"]
+        FortiGate["Fortinet FortiGate"]
+        PANOS["Palo Alto PAN-OS"]
+    end
+
+    subgraph DeviceAccess["Device Interaction Methods"]
+        SSH["SSH / CLI"]
+        REST["REST API"]
+        XML["PAN-OS XML API"]
+    end
+
+    subgraph Data["Persistence Layer"]
+        PG["PostgreSQL\nDevices / Snapshots / Changes / Audit"]
+        Redis["Redis\nTokens / Cache / Task State"]
+    end
+
+    User --> UI
+    UI --> API
+
+    API --> Auth
+    API --> Workflow
+    API --> AuditSvc
+
+    Workflow --> AI
+    Workflow --> ChangePlan
+    ChangePlan --> Validation
+    Validation --> Risk
+    Risk --> Registry
+
+    Registry --> Normalized
+    Registry --> Templates
+    Registry --> Rollback
+
+    Registry --> FortiGate
+    Registry --> PANOS
+
+    FortiGate --> SSH
+    FortiGate --> REST
+    PANOS --> XML
+    PANOS --> SSH
+
+    API --> PG
+    API --> Redis
+    AuditSvc --> PG
+
+    AI -. "Structured intent / explanation only" .-> ChangePlan
+    Templates -. "Commands generated deterministically server-side" .-> DeviceAccess
 ```
 
 ## Architecture Notes
