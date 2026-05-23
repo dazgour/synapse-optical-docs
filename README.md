@@ -75,6 +75,7 @@ High-level architectural concepts include:
 - AI-assisted reasoning layer
 - Human approval workflow concepts
 - Audit-first operational design
+- Deterministic-first operational architecture philosophy
 
 Additional architecture and workflow documentation is available within the `architecture/` directory.
 
@@ -246,6 +247,7 @@ architecture/
 ├── vendor-abstraction.md
 ├── safety-model.md
 ├── roadmap.md
+├── why-deterministic-first-matters.md
 
 troubleshooting/
 workflows/
