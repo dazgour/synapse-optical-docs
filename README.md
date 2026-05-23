@@ -1,242 +1,134 @@
 # Synapse Optical
 
-Synapse Optical is an AI-assisted network automation and operational troubleshooting platform focused on improving the speed, consistency, safety, and auditability of enterprise network and security operations.
+> Built by **Daniel Azgour** — Senior Network Security Engineer specializing in Fortinet, Palo Alto Networks, hybrid cloud networking, and network automation.
 
-The platform is being designed around deterministic operational workflows, vendor-aware validation, operational safety controls, and AI-assisted reasoning to help engineers troubleshoot issues, validate configurations, and execute standardized operational tasks across multi-vendor environments.
+Synapse Optical is an AI-assisted network automation and operational troubleshooting platform, born out of a recurring frustration encountered across enterprise environments: **network operations are too slow, too inconsistent, and too dependent on tribal knowledge.**
 
-Rather than replacing engineers, Synapse Optical is intended to augment operational teams by reducing repetitive manual work, accelerating diagnostics, improving configuration consistency, and assisting operational decision-making while maintaining human oversight and approval.
+The platform is designed to improve the speed, consistency, safety, and auditability of enterprise network and security operations — without removing the engineer from the equation.
 
-Current development focuses primarily on Fortinet environments, with additional multi-vendor support planned for Palo Alto Networks, Cisco platforms, and hybrid cloud networking infrastructure.
+> **Status:** Active proof-of-concept under ongoing development. This repository contains architecture documentation, design philosophy, workflow concepts, and sanitized examples. Core proprietary source code and backend systems are intentionally excluded.
 
-> **Note:** Synapse Optical is currently an active proof-of-concept project under ongoing development. Public documentation reflects both current functionality and planned architectural direction.
-
----
-
-# What Synapse Optical Is Not
-
-Synapse Optical is not designed as an autonomous “AI that directly configures production infrastructure without oversight.”
-
-The platform is being developed around deterministic validation, structured operational workflows, vendor-aware safety controls, and human approval before production-impacting actions.
-
-AI is intended to assist operational decision-making and accelerate troubleshooting — not replace engineering judgment.
+![Synapse Optical — Platform Architecture](./diagrams/synapse_optical_platform_architecture_v2.svg)
 
 ---
 
-# Current PoC Focus
+## Why I Built This
 
-- Fortinet operational workflows
-- VPN troubleshooting
-- Configuration validation
-- Guided operational workflows
-- Deterministic diagnostic logic
-- Vendor-aware operational checks
+After years of working in enterprise network and security operations — migrations, VPN deployments, firewall management, hybrid cloud connectivity — the same problems kept appearing:
+
+- Troubleshooting workflows lived in engineers' heads, not in systems
+- Configuration changes lacked repeatable validation steps
+- Vendor-specific quirks caused preventable outages
+- Audit trails were inconsistent or absent
+
+Synapse Optical is my attempt to systematically address those gaps with a platform that combines **deterministic operational logic**, **vendor-aware intelligence**, and **AI-assisted reasoning** — with human oversight built in from the ground up.
+
+---
+
+## What Synapse Optical Is Not
+
+This platform is **not** an autonomous AI that directly configures production infrastructure without oversight.
+
+Every production-impacting action is gated behind deterministic validation, structured workflow execution, and explicit human approval. AI accelerates and assists — it does not replace engineering judgment.
+
+---
+
+## Architecture Philosophy
+
+### Deterministic First
+
+Deterministic validation and operational logic take priority over AI-generated assumptions. Structured workflows and validation engines are designed to provide **predictable, repeatable, and auditable** operational outcomes before any production-impacting action is executed.
+
+AI is layered on top of a deterministic foundation — not substituted for one.
+
+### AI as an Operational Enhancement Layer
+
+AI functionality assists engineers by:
+
+- Accelerating troubleshooting and diagnostic interpretation
+- Improving operational visibility and workflow interaction
+- Summarizing operational findings in plain language
+- Surfacing relevant vendor-specific context during analysis
+
+### Human Approval and Operational Safety
+
+Operational safety is a primary architectural constraint, not an afterthought. Every workflow follows a structured execution model — with an explicit human approval gate before any production-impacting action is executed.
+
+![Synapse Optical — Operational Workflow](./diagrams/synapse_optical_public_operational_workflow_v3_spacing_fixed.svg)
+
+### Vendor-Aware Intelligence
+
+Operational workflows adapt to:
+
+- Vendor platform and OS version
+- Licensing constraints
+- Supported configuration capabilities
+- Cryptographic support limitations
+- Vendor-specific operational behavior
+
+This reduces unsupported or unsafe configuration generation across heterogeneous environments.
+
+---
+
+## Technical Architecture (High Level)
+
+Synapse Optical uses a **thin-client / controlled-backend architecture** designed around operational safety, deterministic validation, vendor-aware workflow orchestration, and auditability. Full architecture documentation is available in the [`architecture/`](./architecture/) directory.
+
+---
+
+## Current PoC Focus Areas
+
+- Fortinet operational workflows (FortiGate, FortiManager, FortiAnalyzer)
+- IPsec VPN troubleshooting engines (Phase 1 / Phase 2, DPD, NAT-T, selectors)
+- Firewall policy and configuration validation
+- Guided deterministic operational workflows
+- Vendor-aware operational safety checks
 - AI-assisted troubleshooting analysis
-- Change preview concepts
-- Rollback planning concepts
+- Change preview and rollback planning concepts
 
 ---
 
-# Active Development Areas
+## Active Development
 
 - Vendor abstraction architecture
 - Palo Alto Networks PAN-OS integration
-- Workflow orchestration
-- Operational safety controls
+- Workflow orchestration engine
 - VPN commissioning workflows
 - Policy validation logic
-- Troubleshooting engines
 - Structured audit workflows
 
 ---
 
-# Planned Future Direction
+## Multi-Vendor Roadmap
 
-- Expanded multi-vendor support
-- Hybrid cloud workflow integrations
-- Advanced troubleshooting engines
-- Compliance and drift analysis
-- Workflow orchestration enhancements
-- Enterprise operational controls
-- Centralized operational visibility
-- Additional infrastructure platform support
-
----
-
-# Public Architecture Overview
-
-Synapse Optical uses a thin-client / controlled-backend architecture designed around operational safety, deterministic validation, vendor-aware workflow orchestration, and auditability.
-
-High-level architectural concepts include:
-
-- React / TypeScript frontend
-- Backend-controlled workflow engine
-- Vendor abstraction layer
-- Deterministic validation engine
-- AI-assisted reasoning layer
-- Human approval workflow concepts
-- Audit-first operational design
-- Deterministic-first operational architecture philosophy
-
-Additional architecture and workflow documentation is available within the `architecture/` directory.
+| Platform | Status |
+|---|---|
+| Fortinet FortiGate | ✅ Current focus |
+| FortiAnalyzer | ✅ Current focus |
+| Palo Alto Networks PAN-OS | 🔄 Active development |
+| Cisco ASA | 📋 Planned |
+| Cisco IOS / IOS-XE / NX-OS | 📋 Planned |
+| Hybrid cloud networking (AWS) | 📋 Planned |
 
 ---
 
-# Architecture Philosophy
+## Functional Areas
 
-Synapse Optical is being developed around several core engineering principles.
+### VPN Troubleshooting
+IPsec Phase 1 and Phase 2 analysis, DPD and NAT-T diagnostics, routing and selector validation, authentication and peer ID troubleshooting, tunnel state verification, vendor-aware VPN workflows.
 
-## Deterministic First
+### Firewall Operations
+Policy analysis, address object management, interface configuration workflows, NAT validation, security policy consistency checks, deterministic validation workflows.
 
-Deterministic validation and operational logic take priority over AI-generated assumptions.
+### Migration Assistance
+Pre-change operational checks, post-change verification workflows, rollback planning concepts, multi-vendor configuration comparison.
 
-Structured workflows and validation engines are designed to provide predictable, repeatable, and auditable operational outcomes before production-impacting actions are executed.
-
----
-
-## AI as an Operational Enhancement Layer
-
-AI functionality is intended to assist engineers by:
-
-- accelerating troubleshooting
-- improving operational visibility
-- simplifying workflow interaction
-- assisting diagnostic interpretation
-- helping summarize operational findings
-
-AI is not intended to independently perform uncontrolled infrastructure changes.
+### Hybrid Cloud Connectivity
+AWS hybrid networking concepts, VPN connectivity validation, routing and segmentation analysis, secure connectivity workflow development.
 
 ---
 
-## Human Approval and Operational Safety
-
-Operational safety remains a primary architectural goal.
-
-Human validation and approval are expected before production-impacting configuration changes or workflow execution within operational environments.
-
-Workflow concepts are being designed around:
-
-1. Request generation
-2. Validation and analysis
-3. Change preview
-4. Human review and approval
-5. Execution
-6. Post-change verification
-7. Audit tracking and rollback visibility
-
----
-
-## Vendor-Aware Intelligence
-
-Operational workflows are designed to adapt to:
-
-- vendor platforms
-- operating system versions
-- licensing constraints
-- supported configuration capabilities
-- cryptographic support limitations
-- vendor-specific operational behavior
-
-This helps reduce unsupported or unsafe configuration generation.
-
----
-
-## Real-World Operational Focus
-
-The platform is being developed from a practical infrastructure operations perspective, focusing on common enterprise networking and security challenges encountered during:
-
-- troubleshooting
-- migrations
-- VPN operations
-- firewall management
-- routing validation
-- NAT analysis
-- operational change workflows
-- hybrid cloud connectivity
-
----
-
-# Example Functional Areas
-
-## VPN Troubleshooting
-
-- IPsec Phase 1 and Phase 2 analysis
-- DPD and NAT-T diagnostics
-- Routing and selector validation
-- Authentication and peer ID troubleshooting
-- Tunnel state verification
-- Vendor-aware VPN workflows
-
----
-
-## Firewall Operations
-
-- Firewall policy analysis
-- Address object management
-- Interface configuration workflows
-- NAT validation
-- Security policy consistency checks
-- Deterministic validation workflows
-
----
-
-## Migration Assistance
-
-- Firewall migration validation
-- Pre-change operational checks
-- Post-change verification workflows
-- Rollback planning concepts
-- Multi-vendor configuration comparison
-
----
-
-## Hybrid Cloud Connectivity
-
-- AWS hybrid networking concepts
-- VPN connectivity validation
-- Routing and segmentation analysis
-- Secure connectivity workflow development
-
----
-
-# Multi-Vendor Infrastructure Direction
-
-## Current Development Focus
-
-- Fortinet FortiGate
-- FortiManager
-- FortiAnalyzer
-
-## Active Development
-
-- Palo Alto Networks PAN-OS
-
-## Planned Platform Support
-
-- Cisco ASA
-- Cisco IOS / IOS-XE / NX-OS
-- Additional enterprise infrastructure platforms
-- Hybrid cloud networking environments
-
----
-
-# Repository Scope
-
-This public repository contains:
-
-- architecture documentation
-- technical diagrams
-- workflow overviews
-- sanitized configuration examples
-- screenshots and interface previews
-- operational concepts and methodologies
-- troubleshooting approaches
-- public architectural documentation
-
-Core proprietary source code, orchestration logic, internal AI workflows, backend systems, execution pipelines, and implementation-specific intellectual property are intentionally excluded from this repository.
-
----
-
-# Current Repository Structure
+## Repository Structure
 
 ```text
 README.md
@@ -255,36 +147,18 @@ diagrams/
 screenshots/
 ```
 
----
-
-# Project Status
-
-Synapse Optical is currently in active development and proof-of-concept refinement.
-
-Current focus areas include:
-
-- Fortinet operational workflows
-- VPN troubleshooting engines
-- Vendor abstraction concepts
-- Workflow validation logic
-- Operational safety controls
-- AI-assisted troubleshooting methodologies
-- Palo Alto Networks integration
-- Structured workflow orchestration
+> Core proprietary source code, orchestration logic, internal AI workflows, backend systems, and execution pipelines are intentionally excluded from this public repository.
 
 ---
 
-# Disclaimer
+## Disclaimer
 
-All configurations, examples, diagrams, screenshots, and workflows contained within this repository are sanitized and intended for demonstration, educational, and architectural showcase purposes only.
-
-No customer environments, credentials, proprietary client data, or production-sensitive information are included.
+All configurations, examples, diagrams, screenshots, and workflows in this repository are sanitized and intended for demonstration, educational, and architectural showcase purposes only. No customer environments, credentials, proprietary client data, or production-sensitive information are included.
 
 ---
 
-# Author
+## Author
 
-Daniel Azgour  
+**Daniel Azgour**  
 Senior Network Security Engineer  
-
-Fortinet | Palo Alto Networks | Hybrid Cloud Networking | Network Automation | Operational Security Engineering
+Fortinet · Palo Alto Networks · Hybrid Cloud Networking · Network Automation · Operational Security Engineering
