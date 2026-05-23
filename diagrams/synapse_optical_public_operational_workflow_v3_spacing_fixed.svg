@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1450" height="992"
+     viewBox="0 0 1450 992"
+     role="img" aria-labelledby="title desc">
+<title id="title">Synapse Optical Public Operational Workflow</title>
+<desc id="desc">Public-safe operational workflow showing engineer request, web UI, backend API, workflow engine, AI assistance, network device interaction, audit logging, and final outcome.</desc>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#1e293b" />
+  </marker>
+  <filter id="softShadow" x="-25%" y="-25%" width="150%" height="150%">
+    <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<rect x="0" y="0" width="1450" height="992" fill="#ffffff" />
+
+<text x="725.0" y="35.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Synapse Optical — Public Operational Workflow</text>
+<rect x="33.0" y="72.0" width="154" height="44" rx="11" fill="#f8fafc" stroke="#334155" stroke-width="1.35" filter="url(#softShadow)" />
+<text x="110.0" y="99.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="650" fill="#0f172a">Engineer</text>
+<line x1="110.0" y1="130.0" x2="110.0" y2="934.0" stroke="#94a3b8" stroke-width="1.15" stroke-dasharray="5 7" />
+<rect x="238.0" y="72.0" width="154" height="44" rx="11" fill="#f8fafc" stroke="#334155" stroke-width="1.35" filter="url(#softShadow)" />
+<text x="315.0" y="99.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="650" fill="#0f172a">Web UI</text>
+<line x1="315.0" y1="130.0" x2="315.0" y2="934.0" stroke="#94a3b8" stroke-width="1.15" stroke-dasharray="5 7" />
+<rect x="443.0" y="72.0" width="154" height="44" rx="11" fill="#f8fafc" stroke="#334155" stroke-width="1.35" filter="url(#softShadow)" />
+<text x="520.0" y="99.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="650" fill="#0f172a">Backend API</text>
+<line x1="520.0" y1="130.0" x2="520.0" y2="934.0" stroke="#94a3b8" stroke-width="1.15" stroke-dasharray="5 7" />
+<rect x="648.0" y="72.0" width="154" height="44" rx="11" fill="#f8fafc" stroke="#334155" stroke-width="1.35" filter="url(#softShadow)" />
+<text x="725.0" y="99.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="650" fill="#0f172a">Workflow Engine</text>
+<line x1="725.0" y1="130.0" x2="725.0" y2="934.0" stroke="#94a3b8" stroke-width="1.15" stroke-dasharray="5 7" />
+<rect x="853.0" y="72.0" width="154" height="44" rx="11" fill="#f8fafc" stroke="#334155" stroke-width="1.35" filter="url(#softShadow)" />
+<text x="930.0" y="99.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="650" fill="#0f172a">AI Assistance</text>
+<line x1="930.0" y1="130.0" x2="930.0" y2="934.0" stroke="#94a3b8" stroke-width="1.15" stroke-dasharray="5 7" />
+<rect x="1058.0" y="72.0" width="154" height="44" rx="11" fill="#f8fafc" stroke="#334155" stroke-width="1.35" filter="url(#softShadow)" />
+<text x="1135.0" y="99.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="650" fill="#0f172a">Network Device</text>
+<line x1="1135.0" y1="130.0" x2="1135.0" y2="934.0" stroke="#94a3b8" stroke-width="1.15" stroke-dasharray="5 7" />
+<rect x="1263.0" y="72.0" width="154" height="44" rx="11" fill="#f8fafc" stroke="#334155" stroke-width="1.35" filter="url(#softShadow)" />
+<text x="1340.0" y="99.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="13" font-weight="650" fill="#0f172a">Audit Log</text>
+<line x1="1340.0" y1="130.0" x2="1340.0" y2="934.0" stroke="#94a3b8" stroke-width="1.15" stroke-dasharray="5 7" />
+<line x1="110.0" y1="168.0" x2="315.0" y2="168.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="114.5" y="132.0" width="195.9" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="212.5" y="149.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Submit workflow request</text>
+<line x1="315.0" y1="234.0" x2="520.0" y2="234.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="323.2" y="198.0" width="188.6" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="417.5" y="215.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Send request + context</text>
+<line x1="520.0" y1="300.0" x2="725.0" y2="300.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="551.5" y="264.0" width="142.0" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="622.5" y="281.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Start workflow</text>
+<line x1="725.0" y1="366.0" x2="930.0" y2="366.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="696.7" y="330.0" width="261.6" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="827.5" y="347.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Assist analysis / interpretation</text>
+<path d="M725.0,432.0 C821.0,432.0 821.0,466.0 725.0,466.0" fill="none" stroke="#047857" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="712.1" y="394.0" width="217.8" height="25" rx="7" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="0.9" />
+<text x="821.0" y="411.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="650" fill="#065f46">Validate operational logic</text>
+<line x1="725.0" y1="498.0" x2="315.0" y2="498.0" stroke="#1e293b" stroke-width="1.9" stroke-dasharray="7 6" marker-end="url(#arrowhead)" />
+<rect x="403.8" y="462.0" width="232.4" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="520.0" y="479.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Present preview + validation</text>
+<line x1="110.0" y1="564.0" x2="315.0" y2="564.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="136.4" y="528.0" width="152.1" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="212.5" y="545.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Approve execution</text>
+<line x1="315.0" y1="630.0" x2="520.0" y2="630.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="346.5" y="594.0" width="142.0" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="417.5" y="611.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Submit approval</text>
+<line x1="520.0" y1="696.0" x2="1135.0" y2="696.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="722.2" y="660.0" width="210.5" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="827.5" y="677.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Execute approved workflow</text>
+<line x1="1135.0" y1="762.0" x2="520.0" y2="762.0" stroke="#1e293b" stroke-width="1.9" stroke-dasharray="7 6" marker-end="url(#arrowhead)" />
+<rect x="756.5" y="726.0" width="142.0" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="827.5" y="743.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Return result</text>
+<line x1="520.0" y1="828.0" x2="1340.0" y2="828.0" stroke="#1e293b" stroke-width="1.9" marker-end="url(#arrowhead)" />
+<rect x="850.3" y="792.0" width="159.4" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="930.0" y="809.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Store audit record</text>
+<line x1="520.0" y1="894.0" x2="315.0" y2="894.0" stroke="#1e293b" stroke-width="1.9" stroke-dasharray="7 6" marker-end="url(#arrowhead)" />
+<rect x="346.5" y="858.0" width="142.0" height="25" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9" />
+<text x="417.5" y="875.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#0f172a">Present outcome</text>
+<rect x="80.0" y="934.0" width="1290.0" height="28" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1" />
+<text x="725.0" y="953.0" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-size="12" font-weight="550" fill="#64748b">Public-safe workflow view: AI assists analysis; deterministic validation and human approval remain central controls.</text>
+</svg>
