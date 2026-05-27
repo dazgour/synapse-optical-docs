@@ -1,0 +1,312 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="3370" viewBox="0 0 1300 3370" role="img">
+<defs>
+  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth"><path d="M2,2 L10,6 L2,10 z" fill="#475569"/></marker>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000000" flood-opacity="0.10"/></filter>
+</defs>
+<rect x="30" y="30" width="1240" height="3310" rx="32" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+<text x="650.0" y="95" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" fill="#0F172A" text-anchor="middle">
+<tspan x="650.0" dy="0">VPN tunnel failure investigation</tspan>
+</text>
+<text x="650.0" y="145" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="650.0" dy="0">Deterministic diagnostic workflow · read-only investigation · human-approved remediation</tspan>
+</text>
+<g filter="url(#shadow)"><rect x="80" y="220" width="1140" height="475" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/></g>
+<text x="114" y="268" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#1E293B" text-anchor="start">
+<tspan x="114" dy="0">Stage 1 · Tunnel state</tspan>
+</text>
+<rect x="160" y="310" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="345" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">Is Phase 1 established?</tspan>
+</text>
+<text x="370.0" y="380" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">Check IKE SA status</tspan>
+</text>
+<rect x="730" y="310" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="345" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">Phase 1 not up</tspan>
+</text>
+<text x="935.0" y="380" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Check IKE negotiation, reachability and</tspan>
+<tspan x="935.0" dy="20.06">peer settings</tspan>
+</text>
+<line x1="590" y1="362.5" x2="710" y2="362.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="348.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="423" x2="370.0" y2="445" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="451" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<rect x="160" y="460" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="495" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">Is Phase 2 established?</tspan>
+</text>
+<text x="370.0" y="530" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">Check IPsec SA / child SA</tspan>
+</text>
+<rect x="730" y="460" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="495" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">Phase 2 not up</tspan>
+</text>
+<text x="935.0" y="530" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Check selectors, proposals and PFS</tspan>
+</text>
+<line x1="590" y1="512.5" x2="710" y2="512.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="498.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="573" x2="370.0" y2="576" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="586" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<rect x="180" y="592" width="560" height="85" rx="18" fill="#ECFDF5" stroke="#059669" stroke-width="2.5"/>
+<text x="460.0" y="622" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="460.0" dy="0">Both SAs up — traffic issue</tspan>
+</text>
+<text x="460.0" y="652" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="460.0" dy="0">Proceed to routing and policy</tspan>
+</text>
+<line x1="650.0" y1="705" x2="650.0" y2="725" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)"><rect x="80" y="745" width="1140" height="475" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/></g>
+<text x="114" y="793" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#1E293B" text-anchor="start">
+<tspan x="114" dy="0">Stage 2 · Authentication and identity</tspan>
+</text>
+<rect x="160" y="835" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="870" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">Peer identity match?</tspan>
+</text>
+<text x="370.0" y="905" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">IP, FQDN, or certificate ID</tspan>
+</text>
+<rect x="730" y="835" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="870" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">ID mismatch</tspan>
+</text>
+<text x="935.0" y="905" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Fix peer ID / local ID configuration</tspan>
+</text>
+<line x1="590" y1="887.5" x2="710" y2="887.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="873.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="948" x2="370.0" y2="970" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="976" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<rect x="160" y="985" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="1020" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">Auth method valid?</tspan>
+</text>
+<text x="370.0" y="1055" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">PSK match or certificate trust chain</tspan>
+</text>
+<rect x="730" y="985" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="1020" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">Auth failure</tspan>
+</text>
+<text x="935.0" y="1055" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Verify PSK, certificate, CA and expiry</tspan>
+</text>
+<line x1="590" y1="1037.5" x2="710" y2="1037.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="1023.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="1098" x2="370.0" y2="1202" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="1124" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<line x1="650.0" y1="1230" x2="650.0" y2="1250" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)"><rect x="80" y="1270" width="1140" height="475" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/></g>
+<text x="114" y="1318" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#1E293B" text-anchor="start">
+<tspan x="114" dy="0">Stage 3 · Proposal compatibility</tspan>
+</text>
+<rect x="160" y="1360" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="1395" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">IKE Phase 1 proposals match?</tspan>
+</text>
+<text x="370.0" y="1430" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">Encryption, hash, DH group</tspan>
+</text>
+<rect x="730" y="1360" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="1395" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">P1 mismatch</tspan>
+</text>
+<text x="935.0" y="1430" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Align IKE proposals and DH group</tspan>
+</text>
+<line x1="590" y1="1412.5" x2="710" y2="1412.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="1398.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="1473" x2="370.0" y2="1495" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="1501" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<rect x="160" y="1510" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="1538" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">IPsec Phase 2 proposals</tspan>
+<tspan x="370.0" dy="27.139999999999997">match?</tspan>
+</text>
+<text x="370.0" y="1594" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">ESP/AH, encryption, PFS group</tspan>
+</text>
+<rect x="730" y="1510" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="1545" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">P2 mismatch</tspan>
+</text>
+<text x="935.0" y="1580" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Align IPsec proposals and PFS</tspan>
+</text>
+<line x1="590" y1="1562.5" x2="710" y2="1562.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="1548.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="1623" x2="370.0" y2="1727" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="1649" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<line x1="650.0" y1="1755" x2="650.0" y2="1775" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)"><rect x="80" y="1795" width="1140" height="475" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/></g>
+<text x="114" y="1843" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#1E293B" text-anchor="start">
+<tspan x="114" dy="0">Stage 4 · NAT traversal and routing</tspan>
+</text>
+<rect x="160" y="1885" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="1913" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">NAT detected — NAT-T</tspan>
+<tspan x="370.0" dy="27.139999999999997">enabled?</tspan>
+</text>
+<text x="370.0" y="1969" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">UDP 4500, DPD keepalive</tspan>
+</text>
+<rect x="730" y="1885" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="1920" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">NAT-T disabled</tspan>
+</text>
+<text x="935.0" y="1955" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Enable NAT-T and confirm UDP 4500 path</tspan>
+</text>
+<line x1="590" y1="1937.5" x2="710" y2="1937.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="1923.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="1998" x2="370.0" y2="2020" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="2026" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<rect x="160" y="2035" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="2070" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">Traffic selectors correct?</tspan>
+</text>
+<text x="370.0" y="2105" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">Local/remote subnets, proxy IDs</tspan>
+</text>
+<rect x="730" y="2035" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="2070" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">Selector mismatch</tspan>
+</text>
+<text x="935.0" y="2105" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Correct local/remote subnets or proxy</tspan>
+<tspan x="935.0" dy="20.06">IDs</tspan>
+</text>
+<line x1="590" y1="2087.5" x2="710" y2="2087.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="2073.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="2148" x2="370.0" y2="2252" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="2174" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<line x1="650.0" y1="2280" x2="650.0" y2="2300" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)"><rect x="80" y="2320" width="1140" height="475" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/></g>
+<text x="114" y="2368" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#1E293B" text-anchor="start">
+<tspan x="114" dy="0">Stage 5 · Firewall policy and NAT</tspan>
+</text>
+<rect x="160" y="2410" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="2438" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">Security policy permits</tspan>
+<tspan x="370.0" dy="27.139999999999997">traffic?</tspan>
+</text>
+<text x="370.0" y="2494" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">Zone, source, destination, service</tspan>
+</text>
+<rect x="730" y="2410" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="2445" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">Policy gap</tspan>
+</text>
+<text x="935.0" y="2480" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Add or adjust policy after change</tspan>
+<tspan x="935.0" dy="20.06">approval</tspan>
+</text>
+<line x1="590" y1="2462.5" x2="710" y2="2462.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="2448.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="2523" x2="370.0" y2="2545" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="2551" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<rect x="160" y="2560" width="420" height="105" rx="18" fill="#FFFFFF" stroke="#64748B" stroke-width="2.5"/>
+<text x="370.0" y="2595" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="370.0" dy="0">NAT exemption in place?</tspan>
+</text>
+<text x="370.0" y="2630" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="370.0" dy="0">Tunnel traffic excluded from NAT</tspan>
+</text>
+<rect x="730" y="2560" width="410" height="105" rx="18" fill="#FFF7ED" stroke="#EA580C" stroke-width="2.5"/>
+<text x="935.0" y="2595" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="935.0" dy="0">NAT exemption missing</tspan>
+</text>
+<text x="935.0" y="2630" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="935.0" dy="0">Add exempt rule after change approval</tspan>
+</text>
+<line x1="590" y1="2612.5" x2="710" y2="2612.5" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="660" y="2598.5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">
+<tspan x="660" dy="0">No</tspan>
+</text>
+<line x1="370.0" y1="2673" x2="370.0" y2="2676" stroke="#059669" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400.0" y="2686" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">
+<tspan x="400.0" dy="0">Yes</tspan>
+</text>
+<rect x="180" y="2692" width="560" height="85" rx="18" fill="#F8FAFC" stroke="#334155" stroke-width="2.5"/>
+<text x="460.0" y="2722" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="460.0" dy="0">All checks passed — escalate</tspan>
+</text>
+<text x="460.0" y="2752" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="460.0" dy="0">Collect diagnostics and packet captures</tspan>
+</text>
+<line x1="650.0" y1="2805" x2="650.0" y2="2845" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="310" y="2865" width="680" height="130" rx="18" fill="#F8FAFC" stroke="#334155" stroke-width="2.5"/>
+<text x="650.0" y="2900" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#0F172A" text-anchor="middle">
+<tspan x="650.0" dy="0">No changes without engineer approval</tspan>
+</text>
+<text x="650.0" y="2935" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#475569" text-anchor="middle">
+<tspan x="650.0" dy="0">Escalation package: logs, SA state, selectors, routes, policies,</tspan>
+<tspan x="650.0" dy="20.06">NAT table and packet captures</tspan>
+</text>
+<rect x="190" y="3060" width="920" height="165" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<text x="650.0" y="3100" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="800" fill="#1E293B" text-anchor="middle">
+<tspan x="650.0" dy="0">Legend</tspan>
+</text>
+<rect x="250" y="3130" width="36" height="25" rx="6" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+<text x="302" y="3149" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">
+<tspan x="302" dy="0">Diagnostic check</tspan>
+</text>
+<rect x="690" y="3130" width="36" height="25" rx="6" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+<text x="742" y="3149" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">
+<tspan x="742" dy="0">Confirmed / proceed path</tspan>
+</text>
+<rect x="250" y="3176" width="36" height="25" rx="6" fill="#FFF7ED" stroke="#EA580C" stroke-width="2"/>
+<text x="302" y="3195" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">
+<tspan x="302" dy="0">Remediation area</tspan>
+</text>
+<rect x="690" y="3176" width="36" height="25" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<text x="742" y="3195" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">
+<tspan x="742" dy="0">Stage container</tspan>
+</text>
+<text x="650.0" y="3275" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#334155" text-anchor="middle">
+<tspan x="650.0" dy="0">Synapse Optical — VPN troubleshooting workflow</tspan>
+</text>
+<text x="650.0" y="3313" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#64748B" text-anchor="middle">
+<tspan x="650.0" dy="0">Read-only investigation · remediation requires engineer review and change approval</tspan>
+</text>
+</svg>
