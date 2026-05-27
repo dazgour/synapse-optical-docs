@@ -119,6 +119,8 @@ Synapse Optical uses a **thin-client / controlled-backend architecture** designe
 ### VPN Troubleshooting
 IPsec Phase 1 and Phase 2 analysis, DPD and NAT-T diagnostics, routing and selector validation, authentication and peer ID troubleshooting, tunnel state verification, vendor-aware VPN workflows.
 
+![Synapse Optical — VPN Troubleshooting Workflow](./diagrams/vpn_troubleshooting_workflow_v3.svg)
+
 ### Firewall Operations
 Policy analysis, address object management, interface configuration workflows, NAT validation, security policy consistency checks, deterministic validation workflows.
 
