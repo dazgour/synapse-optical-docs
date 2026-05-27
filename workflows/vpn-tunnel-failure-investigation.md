@@ -85,6 +85,8 @@ Before evidence collection begins, the workflow classifies the investigation aga
 
 Identifying the likely stage early narrows which diagnostic checks are most relevant and reduces unnecessary evidence collection.
 
+![VPN Tunnel Failure — Stage Classification](../diagrams/vpn_failure_stage_classification.svg)
+
 ---
 
 ## Deterministic Diagnostic Areas
