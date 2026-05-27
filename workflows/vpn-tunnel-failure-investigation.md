@@ -21,6 +21,9 @@ Current proof-of-concept vendor support for this workflow:
 
 Diagnostic evidence collection is normalized across vendors. The troubleshooting output structure is consistent regardless of the underlying platform.
 
+![Vendor diagnostic normalization — FortiGate and PAN-OS](../diagrams/vpn_vendor_normalization.svg)
+
+
 ---
 
 ## Workflow Goal
