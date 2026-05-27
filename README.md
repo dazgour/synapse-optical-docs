@@ -104,7 +104,6 @@ Synapse Optical uses a **thin-client / controlled-backend architecture** designe
 | Platform | Status |
 |---|---|
 | Fortinet FortiGate | ✅ Current focus |
-| FortiAnalyzer | ✅ Current focus |
 | Palo Alto Networks PAN-OS | ✅ Current focus |
 | Cisco ASA | 📋 Planned |
 | Check Point Gaia | 📋 Planned |
