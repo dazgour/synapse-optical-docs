@@ -127,26 +127,29 @@ Full architecture documentation is available in the [`architecture/`](./architec
 
 ## Current PoC Focus Areas
 
-- Fortinet FortiGate operational workflows
+FortiGate is the primary and most complete implementation. PAN-OS integration is actively built and operational across several workflow areas, with continued expansion underway.
+
+- Fortinet FortiGate operational workflows (primary implementation)
+- Palo Alto Networks PAN-OS workflows (VPN commissioning, interface management, policy analysis, diagnostics)
 - IPsec VPN troubleshooting (Phase 1 / Phase 2 analysis, DPD, NAT-T, traffic selectors)
+- Multi-vendor VPN commissioning (FortiGate and PAN-OS)
 - Firewall policy and configuration validation
 - Guided deterministic operational workflows
 - Vendor-aware operational safety checks
 - AI-assisted troubleshooting analysis and summarization
 - Change preview and human approval workflows
-- Rollback planning concepts and post-change verification
+- Rollback planning and post-change verification
+- Routing protocol support (BGP / OSPF) via vendor-normalized template layer (FortiGate and PAN-OS)
 
 ---
 
 ## Active Development
 
-- Vendor abstraction architecture
-- Palo Alto Networks PAN-OS integration
-- Workflow orchestration engine
-- VPN commissioning workflows (multi-vendor)
-- Policy validation logic
+- Vendor abstraction architecture — expanding to additional platforms
+- Workflow orchestration engine — broadening multi-vendor workflow coverage
+- Policy validation logic — extending across vendor platforms
 - Structured audit workflows
-- Routing protocol template layer (BGP / OSPF, vendor-normalized)
+- Cross-device diagnostics and topology analysis
 
 ---
 
@@ -156,8 +159,8 @@ The platform is being built around support for the major enterprise firewall ven
 
 | Platform | Status |
 |---|---|
-| Fortinet FortiGate | ✅ Current focus |
-| Palo Alto Networks PAN-OS | ✅ Current focus |
+| Fortinet FortiGate | ✅ Primary implementation |
+| Palo Alto Networks PAN-OS | 🔄 Active — expanding coverage |
 | Cisco ASA | 📋 Planned |
 | Cisco Firepower / FTD | 📋 Planned |
 | Juniper Junos OS | 📋 Planned |
