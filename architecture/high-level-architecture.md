@@ -244,7 +244,7 @@ All database models carry `tenant_id` for future row-level security enforcement.
 **Deployment model:** Single-user, single-tenant local PoC running under Docker Compose. Designed for clean promotion to a multi-tenant SaaS architecture — multi-tenancy scaffolding, JWT infrastructure, and vendor plugin extensibility are present in the current codebase.
 
 **Current PoC focus areas:**
-- Fortinet FortiGate and FortiAnalyzer operational workflows
+- Fortinet FortiGate operational workflows
 - Palo Alto Networks PAN-OS integration (configuration management, diagnostics, VPN)
 - IPsec VPN troubleshooting and commissioning
 - Firewall policy and configuration validation
