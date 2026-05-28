@@ -94,17 +94,17 @@ platforms. Stages 6 and 7 represent the near-term and longer-term development di
 
 ## Phase 1 — Multi-Vendor Expansion
 
-### Cisco Platform Integration
+### Security Platform Expansion
 
 - Cisco ASA security platform workflows
-- Cisco IOS / IOS-XE routing and switching workflows
-- Cisco NX-OS data center switching workflows
-- VPN, policy, and routing workflow parity with existing vendor support
+- Check Point Gaia security platform workflows
+- Juniper Junos OS (SRX) firewall platform workflows
+- VPN and policy workflow parity with existing vendor support
 
 ### Vendor Plugin Maturation
 
 - Expanded BAU template coverage across all supported vendors
-- Routing protocol adapter expansion for Cisco platforms
+- Routing protocol adapter expansion for planned vendor platforms
 - Improved structured data retrieval and operational telemetry collection
 - Expanded REST API integrations where vendor platforms support them
 
@@ -193,6 +193,12 @@ This phase addresses the progression from proof-of-concept to production-grade p
 - Correlation of symptoms across multiple devices and platforms
 - Root-cause analysis workflow assistance
 - Proactive operational health checks
+
+### Extended Platform Coverage
+
+- Cisco IOS / IOS-XE and NX-OS routing and switching platform workflows
+- FortiAnalyzer log management and analytics integration
+- Vendor plugin expansion for additional enterprise infrastructure platforms
 
 ### Hybrid Cloud Networking
 
