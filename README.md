@@ -127,7 +127,7 @@ Full architecture documentation is available in the [`architecture/`](./architec
 
 ## Current PoC Focus Areas
 
-- Fortinet FortiGate and FortiAnalyzer operational workflows
+- Fortinet FortiGate operational workflows
 - IPsec VPN troubleshooting (Phase 1 / Phase 2 analysis, DPD, NAT-T, traffic selectors)
 - Firewall policy and configuration validation
 - Guided deterministic operational workflows
@@ -152,14 +152,16 @@ Full architecture documentation is available in the [`architecture/`](./architec
 
 ## Multi-Vendor Roadmap
 
+The platform is being built around support for the major enterprise firewall vendors. Planned expansion follows where production firewall deployments are most concentrated across enterprise environments.
+
 | Platform | Status |
 |---|---|
 | Fortinet FortiGate | ✅ Current focus |
 | Palo Alto Networks PAN-OS | ✅ Current focus |
-| FortiAnalyzer | 📋 Planned |
 | Cisco ASA | 📋 Planned |
-| Juniper JunOS OS | 📋 Planned |
-| Check Point GAIA | 📋 Planned |
+| Cisco Firepower / FTD | 📋 Planned |
+| Juniper Junos OS | 📋 Planned |
+| Check Point Gaia | 📋 Planned |
 | Hybrid cloud networking (AWS) | 📋 Planned |
 
 ---
