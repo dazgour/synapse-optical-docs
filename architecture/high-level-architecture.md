@@ -254,8 +254,8 @@ All database models carry `tenant_id` for future row-level security enforcement.
 - AI-assisted log analysis and workflow prerequisite checks
 
 **Planned expansion:**
-- Cisco ASA, Cisco IOS/IOS-XE/NX-OS
-- Hybrid cloud networking (AWS)
+- Cisco ASA, Cisco Firepower/FTD, Check Point Gaia, Juniper Junos OS
+- Hybrid cloud networking (longer-term directional — no current codebase scope)
 - Multi-tenant RBAC and workflow approvals
 - Async execution pipeline (Celery)
 - Expanded REST API coverage (FortiGate)
