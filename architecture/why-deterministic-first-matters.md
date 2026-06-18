@@ -124,7 +124,7 @@ Deterministic Core
 
 **This boundary is enforced in code, not just in policy.**
 
-The AI layer operates within three defined invocation roles:
+The AI layer operates within four defined invocation roles:
 
 1. **Intent parsing** — The AI receives a natural language request and returns structured intent: a typed action, parameters, confidence level, and identified ambiguities. It cannot output device commands, configuration syntax, or API payloads.
 
@@ -132,7 +132,9 @@ The AI layer operates within three defined invocation roles:
 
 3. **Advisory prerequisite analysis** — The AI reviews a workflow context and returns warnings and suggested checks. These findings are displayed to the operator as advisory information. They never block execution. The deterministic validation layer, not the AI layer, is responsible for gating changes.
 
-Anything outside these three roles is handled deterministically — without AI involvement.
+4. **Assessment executive summary** — After a Firewall Health Assessment run completes, the AI receives a sanitized payload (severity counts, category scores, and a short list of top findings) and returns a plain-language executive narrative. It never receives raw configuration data, credentials, or CLI output. All detection, scoring, and per-finding evidence are produced by the deterministic assessment engine. If this call fails, the assessment run still completes successfully — the platform has no runtime dependency on AI availability.
+
+Anything outside these four roles is handled deterministically — without AI involvement.
 
 ---
 
