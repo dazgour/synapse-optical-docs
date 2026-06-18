@@ -24,7 +24,7 @@ This project showcases engineering capability across several disciplines that ar
 - **Operational safety engineering** — human-in-the-loop workflow design, deterministic validation before execution, and audit-first operational controls
 - **AI integration with appropriate boundaries** — AI positioned as an analysis and reasoning layer, not as an autonomous execution authority
 - **Multi-vendor abstraction** — normalized operational workflows across heterogeneous infrastructure platforms with vendor-aware validation logic
-- **Enterprise infrastructure domain depth** — IPsec VPN operations, firewall policy management, routing analysis, NAT troubleshooting, and configuration consistency workflows across FortiOS and PAN-OS platforms
+- **Enterprise infrastructure domain depth** — IPsec VPN operations, firewall policy management, routing analysis, NAT troubleshooting, configuration migration, and security posture assessment across FortiOS and PAN-OS platforms
 
 ---
 
@@ -115,11 +115,12 @@ Operational workflows are designed with auditability built in from the start —
 
 Synapse Optical uses a **thin-client / controlled-backend architecture**:
 
-- **Frontend:** React / TypeScript — dashboard, device management, guided workflows, change requests, troubleshooting views, audit log
+- **Frontend:** React / TypeScript — dashboard, device management, guided workflows, change requests, troubleshooting views, health assessment, migration workspace, audit log
 - **Backend API:** FastAPI — authentication, RBAC, session controls, workflow orchestration, change planning, deterministic validation, risk scoring, audit service
 - **Vendor Abstraction Layer:** plugin registry, normalized configuration model, backend-owned command templates, rollback and verification logic
-- **Device Interaction:** SSH/CLI, REST API (FortiGate), XML API (PAN-OS)
-- **Persistence:** PostgreSQL (devices, config snapshots, change records, audit logs), Redis (session tokens, cache, task state)
+- **Device Interaction:** REST API (FortiGate), XML API (PAN-OS), SSH/CLI fallback
+- **Migration Engine:** TypeScript sidecar — deterministic, pure config translation across vendor pairs (no device I/O)
+- **Persistence:** PostgreSQL (devices, config snapshots, change records, audit logs, assessment runs), Redis (session tokens, cache, task state)
 
 Full architecture documentation is available in the [`architecture/`](./architecture/) directory.
 
@@ -127,61 +128,104 @@ Full architecture documentation is available in the [`architecture/`](./architec
 
 ## Current PoC Focus Areas
 
-FortiGate is the primary and most complete implementation. PAN-OS integration is actively built and operational across several workflow areas, with continued expansion underway.
+FortiGate is the primary and most complete implementation. PAN-OS integration is fully operational across multiple workflow areas. Both vendors are supported by a shared vendor abstraction layer.
 
-- Fortinet FortiGate operational workflows (primary implementation)
-- Palo Alto Networks PAN-OS workflows (VPN commissioning, interface management, policy analysis, diagnostics)
-- IPsec VPN troubleshooting (Phase 1 / Phase 2 analysis, DPD, NAT-T, traffic selectors)
-- Multi-vendor VPN commissioning (FortiGate and PAN-OS)
-- Firewall policy and configuration validation
-- Guided deterministic operational workflows
-- Vendor-aware operational safety checks
-- AI-assisted troubleshooting analysis and summarization
-- Change preview and human approval workflows
-- Rollback planning and post-change verification
-- Routing protocol support (BGP / OSPF) via vendor-normalized template layer (FortiGate and PAN-OS)
-
----
-
-## Active Development
-
-- Vendor abstraction architecture — expanding to additional platforms
-- Workflow orchestration engine — broadening multi-vendor workflow coverage
-- Policy validation logic — extending across vendor platforms
-- Structured audit workflows
-- Cross-device diagnostics and topology analysis
+- **Fortinet FortiGate** operational workflows (FortiOS 7.2.x, 7.4.x, 7.6.x)
+- **Palo Alto Networks PAN-OS 11.2.x** — VPN commissioning, interface management, policy analysis, routing, diagnostics
+- **IPsec VPN** — site-to-site commissioning (FortiGate + PAN-OS), Phase 1/2 troubleshooting, DPD, NAT-T, traffic selector analysis
+- **Remote Access VPN** — FortiGate IPsec Dialup and PAN-OS GlobalProtect commissioning workflows
+- **Firewall Health Assessment** — read-only security and operational posture scoring across 10 assessment categories, per-finding review workflow, fleet overview, scheduled assessments, CSV and PDF export
+- **Config Migration Workspace** — deterministic firewall config translation: Cisco ASA → FortiOS, FortiOS → PAN-OS 11.2; canonical intermediate model; per-object mapping status and readiness gate
+- **Dynamic routing protocol templates** — OSPF and BGP configuration via vendor-normalized template layer (FortiGate + PAN-OS)
+- **Guided BAU change templates** — interface configuration, NAT policy, address objects, static routes, security policy, VPN tunnel (deterministic path, no AI)
+- **Device topology model** — VPN peer, HA pair, SD-WAN hub/spoke, and BGP neighbor relationship tracking; cross-device VPN diagnostics
+- **Change lifecycle** — full pipeline from guided workflow through human approval, controlled execution, post-change verification, and rollback-capable audit record
 
 ---
 
-## Multi-Vendor Roadmap
+## Feature Matrix
 
-The platform is being built around support for the major enterprise firewall vendors. Planned expansion follows where production firewall deployments are most concentrated across enterprise environments.
-
-| Platform | Status |
+| Feature | Status |
 |---|---|
-| Fortinet FortiGate | ✅ Primary implementation |
-| Palo Alto Networks PAN-OS | 🔄 Active — expanding coverage |
-| Cisco ASA | 📋 Planned |
-| Cisco Firepower / FTD | 📋 Planned |
-| Juniper Junos OS | 📋 Planned |
-| Check Point Gaia | 📋 Planned |
-| Hybrid cloud networking (AWS) | 📋 Planned |
+| FortiGate operational workflows (FortiOS 7.2.x / 7.4.x / 7.6.x) | ✅ Implemented |
+| PAN-OS 11.2.x integration | ✅ Implemented |
+| Site-to-site IPsec VPN commissioning (FortiGate + PAN-OS) | ✅ Implemented |
+| IPsec VPN troubleshooting (Phase 1/2, DPD, NAT-T) | ✅ Implemented |
+| Remote Access VPN — FortiGate IPsec Dialup | ✅ Implemented |
+| Remote Access VPN — PAN-OS GlobalProtect | ✅ Implemented |
+| Firewall Health Assessment (10 categories, scoring, findings) | ✅ Implemented |
+| Health Assessment — fleet overview | ✅ Implemented |
+| Health Assessment — scheduled assessments | ✅ Implemented |
+| Health Assessment — PDF and CSV export | ✅ Implemented |
+| Config Migration Workspace — Cisco ASA → FortiOS | ✅ Implemented |
+| Config Migration Workspace — FortiOS → PAN-OS | ✅ Implemented |
+| Dynamic routing templates — OSPF + BGP (FortiGate + PAN-OS) | ✅ Implemented |
+| Guided BAU change templates (interface, NAT, policy, route, objects) | ✅ Implemented |
+| Device topology model and relationship tracking | ✅ Implemented |
+| Cross-device VPN diagnostics | ✅ Implemented |
+| Change lifecycle with post-change verification | ✅ Implemented |
+| AI-assisted troubleshooting analysis | ✅ Implemented |
+| AI-assisted health assessment executive summary | ✅ Implemented |
+| Cisco IOS / IOS-XE / NX-OS support | 📋 Planned |
+| Cisco Firepower / FTD support | 📋 Planned |
+| Juniper SRX support | 📋 Planned |
+| Check Point Gaia support | 📋 Planned |
+
+---
+
+## Vendor Support
+
+| Platform | Status | Notes |
+|---|---|---|
+| Fortinet FortiGate (FortiOS 7.2.x, 7.4.x, 7.6.x) | ✅ Implemented | Primary implementation; REST API + SSH |
+| Palo Alto Networks PAN-OS 11.2.x | ✅ Implemented | XML API; device-direct |
+| Cisco ASA | ✅ Implemented | Migration source only (ASA → FortiOS config translation) |
+| Cisco IOS / IOS-XE / NX-OS | 📋 Planned | — |
+| Cisco Firepower / FTD | 📋 Planned | — |
+| Juniper SRX (Junos OS) | 📋 Planned | — |
+| Check Point Gaia | 📋 Planned | — |
+| FortiManager / FortiAnalyzer | — | Not in current scope |
 
 ---
 
 ## Functional Areas
 
 ### VPN Operations
-IPsec Phase 1 and Phase 2 analysis, DPD and NAT-T diagnostics, routing and traffic selector validation, authentication and peer identity troubleshooting, tunnel state verification, multi-vendor VPN commissioning workflows.
+Site-to-site IPsec commissioning (FortiGate and PAN-OS), Phase 1 and Phase 2 analysis, DPD and NAT-T diagnostics, routing and traffic selector validation, authentication and peer identity troubleshooting, tunnel state verification, remote access VPN commissioning (FortiGate IPsec Dialup and PAN-OS GlobalProtect).
+
+### Firewall Health Assessment
+Read-only security and operational posture assessment against a structured set of categories — policy hygiene, VPN configuration, NAT consistency, object hygiene, admin identity controls, management exposure, logging coverage, segmentation, and platform posture. Produces a scored report (0–100, A–F grade) with per-finding review workflow. Supports single-device runs and fleet-wide overview. Assessments can be scheduled, run against live device state, stored snapshots, or manually uploaded config files.
+
+### Configuration Management and Migration
+Pre-change operational validation, post-change verification workflows, rollback planning, configuration snapshot management. Deterministic config migration workspace: paste or upload a source firewall config, select a target vendor, and receive a per-object translated output with confidence classification (auto-mapped, requires approval, requires remediation, blocked). Cisco ASA → FortiOS and FortiOS → PAN-OS 11.2 are supported. Migration output is a reviewable preview — no changes are pushed to devices.
 
 ### Firewall Operations
-Policy analysis and consistency checks, address object management, interface configuration workflows, NAT validation, deterministic policy validation workflows.
+Policy analysis and consistency checks, address object management, interface configuration workflows, NAT validation, deterministic policy validation workflows across FortiGate and PAN-OS.
 
-### Configuration Management
-Pre-change operational validation, post-change verification workflows, rollback planning, multi-vendor configuration comparison, configuration snapshot management.
+### Routing
+BGP and OSPF configuration templates via a vendor-normalized layer. Protocol schemas are vendor-agnostic; rendering adapters produce FortiOS CLI or PAN-OS XML output. Unsupported features are reported explicitly rather than silently dropped.
 
-### Hybrid Cloud Connectivity
-AWS hybrid networking concepts, VPN connectivity validation, routing and segmentation analysis, secure connectivity workflow development.
+### Device Topology
+VPN peer, HA pair, SD-WAN hub/spoke, and BGP neighbor relationship tracking across registered devices. Relationships are auto-suggested from diagnostic results and confirmed by the operator. Cross-device concurrent VPN diagnostics correlate Phase 1/2 state and IKE proposals across a device pair.
+
+---
+
+## Roadmap
+
+### Current PoC
+All items in the Feature Matrix marked ✅ Implemented.
+
+### Near-Term
+- Extending multi-vendor coverage across existing operational workflow types
+- Additional vendor support for migration (further source/target pairs)
+- Firewall Health Assessment — expanded per-check detail reporting
+- PoC-to-v1 hardening: production auth, TLS verification, multi-tenancy enforcement
+
+### Long-Term Vision
+- Commercial multi-tenant SaaS platform
+- Expanded vendor support: Cisco IOS/IOS-XE/NX-OS, Juniper SRX, Check Point Gaia, Cisco Firepower/FTD
+- Workflow marketplace for operational runbooks
+- Distributed task execution and connection pooling at scale
 
 ---
 
