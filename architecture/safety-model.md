@@ -80,7 +80,7 @@ Risk scoring runs deterministically against structured rule definitions. It is n
 
 ## AI as a Bounded Assistance Layer
 
-AI functionality operates within three bounded, advisory-only roles:
+AI functionality operates within four bounded, advisory-only roles:
 
 **1. Operational intent interpretation**
 The AI system interprets natural language operational requests and outputs structured semantic intent — a fixed-action classification with associated parameters. It does not output device commands, CLI syntax, XPath strings, or REST payloads. The structured output feeds into a deterministic template pipeline that generates the actual change plan.
@@ -91,7 +91,10 @@ The AI system receives operational log data and a natural language query, and ou
 **3. Workflow prerequisite warnings**
 The AI system reviews available configuration context before a guided workflow begins and outputs advisory warnings and suggested checks. These findings are displayed to the operator for consideration. A failed prerequisite warning never blocks workflow execution — that decision remains with the operator.
 
-In each role, AI output is advisory. AI does not generate device commands, does not approve changes, and does not execute production-impacting actions.
+**4. Health assessment executive summary**
+After a Firewall Health Assessment run completes, the AI system receives a sanitized payload — severity counts, category scores, and a short list of top findings — and produces a plain-language executive narrative. It never receives raw configuration data, credentials, or CLI output. Detection, scoring, and per-finding evidence are 100% deterministic; the AI contributes only the narrative layer. If this call fails or the AI is unavailable, the assessment run still completes successfully with no executive summary attached.
+
+In each role, AI output is advisory. AI does not generate device commands, does not approve changes, does not produce assessment findings or scores, and does not execute production-impacting actions.
 
 ---
 
