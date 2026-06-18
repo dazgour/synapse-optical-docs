@@ -48,7 +48,7 @@ Constructs vendor-specific change plans from validated workflow inputs. All devi
 Validates prerequisites, dependency relationships, cryptographic compatibility, object conflicts, and operational safety conditions before any change plan is presented for approval.
 
 ### Risk Scoring
-Evaluates change plans against declarative risk pattern rules (`risk_patterns.yaml` per vendor) and attaches a risk score to every change before human review. Risk score is surfaced as a float (0.0–1.0) in the change preview. A structured `RiskAssessment` schema with tier classification is in active development.
+Evaluates change plans against declarative risk pattern rules (per vendor) and attaches a risk score to every change before human review. Risk score is surfaced as a float (0.0–1.0) in the change preview. A structured risk assessment schema with tier classification (`critical` / `high` / `medium` / `low` / `informational`) is implemented and used by the Firewall Health Assessment module. Full integration into the change pipeline risk preview is tracked for a future sprint.
 
 ### AI Assistance Layer
 The LLM is called in exactly three contexts:
@@ -58,6 +58,7 @@ The LLM is called in exactly three contexts:
 | Intent parsing | Natural language request + normalized config summary | Structured `ParsedIntent` (action enum + parameters) | Temperature 0.0. LLM never outputs CLI commands. |
 | Log analysis | Up to 200 deny/drop log entries + operator query | Summary, responsible rule, recommended actions, change hint | Change hint requires manual operator action — never auto-submitted. |
 | Workflow prerequisites | Normalized config summary + workflow type | Advisory warnings + suggested checks | Advisory only. Never blocks workflow execution. |
+| Health assessment summary | Sanitized assessment scores and top findings | Executive narrative summary | Advisory only. Never produces a finding, score, or device command. Assessment run completes successfully even if this call fails. |
 
 The LLM is bypassed entirely on the deterministic path (guided workflows and BAU templates), which represents the majority of platform operations.
 
@@ -200,8 +201,8 @@ Both paths land in `pending_review` and follow the identical approval pipeline f
 Synapse Optical is not an AI-driven platform. It is a deterministic platform with AI assistance in specific, bounded contexts.
 
 The LLM:
-- **Is used for:** parsing natural language intent, summarising log analysis findings, and generating advisory prerequisite warnings for guided workflows
-- **Is not used for:** generating device commands, making execution decisions, controlling workflow sequencing, or any operation on the deterministic path
+- **Is used for:** parsing natural language intent, summarising log analysis findings, generating advisory prerequisite warnings for guided workflows, and producing executive narrative summaries for Firewall Health Assessment runs
+- **Is not used for:** generating device commands, making execution decisions, controlling workflow sequencing, producing assessment findings or scores, or any operation on the deterministic path
 
 All device commands originate from server-side templates. The LLM operates at temperature 0.0 for intent parsing. Its outputs are structured JSON — never raw CLI or API syntax. On the deterministic workflow path, the LLM is not invoked at all.
 
@@ -244,22 +245,23 @@ All database models carry `tenant_id` for future row-level security enforcement.
 **Deployment model:** Single-user, single-tenant local PoC running under Docker Compose. Designed for clean promotion to a multi-tenant SaaS architecture — multi-tenancy scaffolding, JWT infrastructure, and vendor plugin extensibility are present in the current codebase.
 
 **Current PoC focus areas:**
-- Fortinet FortiGate operational workflows
-- Palo Alto Networks PAN-OS integration (configuration management, diagnostics, VPN)
-- IPsec VPN troubleshooting and commissioning
-- Firewall policy and configuration validation
-- Interface, routing, NAT, and address object templates
-- Guided deterministic workflows with change preview and approval
-- Device topology discovery and cross-device diagnostics
-- AI-assisted log analysis and workflow prerequisite checks
+- Fortinet FortiGate operational workflows (FortiOS 7.2.x, 7.4.x, 7.6.x)
+- Palo Alto Networks PAN-OS 11.2.x integration (configuration management, VPN, diagnostics, policy analysis)
+- Site-to-site IPsec VPN commissioning and troubleshooting (FortiGate + PAN-OS)
+- Remote Access VPN commissioning — FortiGate IPsec Dialup and PAN-OS GlobalProtect
+- Firewall Health Assessment — read-only security and operational posture scoring across 10 categories, fleet overview, scheduled assessments, PDF and CSV export
+- Configuration migration workspace — Cisco ASA → FortiOS and FortiOS → PAN-OS 11.2 (deterministic, no device I/O)
+- Dynamic routing protocol templates — OSPF and BGP (FortiGate + PAN-OS)
+- Guided BAU change templates — interface, NAT, policy, address objects, static routes, VPN
+- Device topology model and cross-device VPN diagnostics
+- Change lifecycle with post-change verification and rollback-capable audit records
+- AI-assisted log analysis, workflow prerequisite checks, and health assessment executive summaries
 
 **Planned expansion:**
-- Cisco ASA, Cisco Firepower/FTD, Check Point Gaia, Juniper Junos OS
-- Hybrid cloud networking (longer-term directional — no current codebase scope)
+- Cisco Firepower/FTD, Check Point Gaia, Juniper Junos OS — operational workflow support
 - Multi-tenant RBAC and workflow approvals
-- Async execution pipeline (Celery)
+- Async execution pipeline
 - Expanded REST API coverage (FortiGate)
-- Structured risk assessment schema and tier classification
 
 ---
 
@@ -276,4 +278,3 @@ This document intentionally excludes:
 - Implementation-specific intellectual property
 
 The repository is intended to showcase architectural direction, operational methodology, and engineering approach only.
-
