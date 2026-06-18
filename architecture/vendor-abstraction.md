@@ -109,13 +109,15 @@ No changes to core workflow logic, validation pipelines, AI components, the chan
 
 ---
 
-## Routing Protocol Abstraction
+## Routing Protocol and Migration Abstraction
 
 Protocol-level configuration — BGP, OSPF, and similar — is handled through a separate abstraction layer that sits between the API and the vendor plugins.
 
 Shared protocol schemas model configuration intent in a vendor-neutral format. Vendor-specific rendering adapters translate that schema into the appropriate CLI or API syntax for each platform. Unsupported features — protocol knobs that exist in the schema but have no equivalent on a given platform — are surfaced explicitly in the output rather than silently dropped.
 
-This pattern provides a second layer of normalization: it separates protocol intent from vendor rendering, in the same way that `NormalizedConfig` separates configuration state from vendor data formats.
+The same canonical-model pattern applies to the configuration migration workspace. Source vendor configs are normalised to a shared intermediate representation, which target vendor mappers render into platform-specific output. This keeps source and target parsing fully isolated and ensures the same translation pipeline handles any registered source-to-target pair.
+
+Both patterns follow the same principle: separate intent representation from vendor rendering, and surface gaps explicitly rather than silently dropping unsupported constructs.
 
 ---
 
@@ -176,14 +178,10 @@ The vendor abstraction layer is designed to work alongside deterministic validat
 
 Current proof-of-concept development is focused on:
 
-- Fortinet FortiGate (FortiOS via REST API and SSH)
-- Palo Alto Networks PAN-OS (via XML API and SSH)
+- Fortinet FortiGate (FortiOS 7.2.x, 7.4.x, 7.6.x via REST API and SSH)
+- Palo Alto Networks PAN-OS 11.2.x (via XML API and SSH)
 
-Active development and planned expansion areas include:
-
-- Cisco security and networking platforms
-- Hybrid cloud networking integrations
-- Additional enterprise infrastructure platforms
+Planned expansion targets additional enterprise firewall platforms. See the [roadmap](./roadmap.md) for directional detail.
 
 ---
 
@@ -191,7 +189,7 @@ Active development and planned expansion areas include:
 
 The abstraction layer currently supports vendor-normalised workflows across the following areas:
 
-- VPN commissioning and troubleshooting
+- VPN commissioning and troubleshooting (site-to-site and remote access)
 - Firewall policy validation and management
 - Address object management
 - Route analysis and static routing
@@ -199,6 +197,9 @@ The abstraction layer currently supports vendor-normalised workflows across the 
 - NAT validation
 - Configuration consistency checks
 - Cross-device diagnostic correlation
+- Dynamic routing protocol templates (BGP and OSPF, FortiGate and PAN-OS)
+- Firewall Health Assessment — read-only security and operational posture scoring across 10 assessment categories, with fleet overview and scheduled assessment support
+- Configuration migration workspace — deterministic source-to-target config translation (Cisco ASA → FortiOS, FortiOS → PAN-OS); read-only, no device I/O
 
 Vendor-specific capabilities and constraints are evaluated during workflow generation and validation. Workflows adapt their behavior to the target platform based on the registered plugin's capability profile.
 
