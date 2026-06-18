@@ -30,7 +30,9 @@ Stage 7 — Operational intelligence and cross-platform analysis
 ```
 
 The current proof-of-concept has progressed through Stages 1–5 for the primary vendor
-platforms. Stages 6 and 7 represent the near-term and longer-term development direction.
+platforms, and additionally includes read-only analytical modules (Firewall Health Assessment,
+Configuration Migration Workspace) that operate outside the change lifecycle. Stages 6 and 7
+represent the near-term and longer-term development direction.
 
 ---
 
@@ -60,12 +62,44 @@ platforms. Stages 6 and 7 represent the near-term and longer-term development di
 - Log retrieval and analysis
 - XML API change lifecycle with lock, commit, and discard controls
 
+### Remote Access VPN
+
+- FortiGate IPsec Dialup commissioning workflow (mode-config, local user group, access policy)
+- PAN-OS GlobalProtect commissioning workflow (portal and gateway)
+- Vendor-normalized profile schema with per-vendor rendering adapters
+- PSK handling — redacted in all previews, audit logs, and UI display
+
+### Firewall Health Assessment
+
+- Read-only security and operational posture assessment across 10 categories: policy hygiene,
+  VPN configuration, NAT consistency, object hygiene, admin identity, management exposure,
+  logging coverage, network segmentation, and platform posture
+- Scored output (0–100, A–F grade) with per-finding review workflow
+- AI-assisted executive narrative summary (advisory only; run completes if AI is unavailable)
+- Fleet overview across all registered devices
+- Scheduled assessments via cron expression
+- Support for live device pull, stored snapshot, or manually uploaded config file
+- Config-only mode for firewalls not registered as live devices
+- CSV and PDF export
+
+### Configuration Migration Workspace
+
+- Deterministic, read-only firewall config translation — no device I/O
+- Cisco ASA → FortiOS: full pipeline (parse → normalize → map → report)
+- FortiOS → PAN-OS 11.2: full pipeline including Application Control pre-processing
+  and App-ID translation
+- Per-object mapping status classification: auto-mapped, requires approval,
+  requires remediation, blocked
+- Readiness gate summarising overall migration confidence
+- Downloadable target config (FortiOS CLI flat-file or PAN-OS XML)
+
 ### Multi-Vendor Operational Capabilities
 
 - Cross-device VPN diagnostics (FortiGate ↔ PAN-OS and same-vendor pairs)
 - Vendor-agnostic routing protocol template support (BGP and OSPF across both platforms,
   with unsupported-feature reporting per vendor)
-- Device relationship detection and topology awareness
+- Device relationship detection and topology awareness (VPN peer, HA pair, SD-WAN hub/spoke,
+  BGP neighbor)
 - Vendor plugin architecture designed for zero-core-change expansion
 
 ### Change Lifecycle and Operational Safety
@@ -81,6 +115,8 @@ platforms. Stages 6 and 7 represent the near-term and longer-term development di
 - Structured natural language to intent translation (advisory, not execution authority)
 - AI-assisted log analysis and correlation with engineer-review-only change hints
 - AI-assisted workflow prerequisite checks (advisory warnings, never execution blockers)
+- AI-assisted health assessment executive summaries (advisory only; deterministic core
+  owns all detection, scoring, and findings)
 - AI positioned strictly as an operational reasoning layer above a deterministic core
 
 ### Audit and Observability
@@ -96,9 +132,11 @@ platforms. Stages 6 and 7 represent the near-term and longer-term development di
 
 ### Security Platform Expansion
 
-- Cisco ASA security platform workflows
+- Cisco ASA live operational workflows (migration source config translation is implemented
+  in the current PoC; live device workflow support is the Phase 1 target)
 - Check Point Gaia security platform workflows
 - Juniper Junos OS (SRX) firewall platform workflows
+- Cisco Firepower / FTD workflows
 - VPN and policy workflow parity with existing vendor support
 
 ### Vendor Plugin Maturation
@@ -228,16 +266,16 @@ designed for clean promotion to a production SaaS model.
 
 ## Multi-Vendor Platform Status
 
-| Platform | Status |
-|---|---|
-| Fortinet FortiGate | ✅ Current focus |
-| Palo Alto Networks PAN-OS | ✅ Current focus |
-| Cisco ASA | 📋 Planned |
-| Check Point Gaia | 📋 Planned |
-| Juniper Junos OS | 📋 Planned |
-| FortiAnalyzer | 📋 Planned |
-| Cisco IOS / IOS-XE / NX-OS | 📋 Planned |
-| Hybrid cloud networking (AWS) | 📋 Planned |
+| Platform | Status | Notes |
+|---|---|---|
+| Fortinet FortiGate | ✅ Current focus | FortiOS 7.2.x, 7.4.x, 7.6.x |
+| Palo Alto Networks PAN-OS | ✅ Current focus | PAN-OS 11.2.x |
+| Cisco ASA | ✅ Migration source | Config translation implemented (ASA → FortiOS); live operational workflows planned for Phase 1 |
+| Check Point Gaia | 📋 Planned | — |
+| Juniper Junos OS | 📋 Planned | — |
+| Cisco Firepower / FTD | 📋 Planned | — |
+| Cisco IOS / IOS-XE / NX-OS | 📋 Planned | — |
+| Hybrid cloud networking (AWS) | 📋 Long-term direction | — |
 
 ---
 
